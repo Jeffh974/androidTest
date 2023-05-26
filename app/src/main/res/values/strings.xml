@@ -4,4 +4,7 @@
     <string name="previous">Previous</string>
     <string name="hello">Hello to the second page</string>
     <string name="todo">TODO</string>
+    <string name="mariposas">mariposas</string>
+    <string name="plus">plus</string>
+    <string name="textview">TextView</string>
 </resources>
