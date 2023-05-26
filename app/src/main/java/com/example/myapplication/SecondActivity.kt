@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.example.myapplication.databinding.SecondActivityBinding
 
 class Counter(var c: Int = 0)
@@ -26,9 +25,9 @@ class SecondActivity : Activity() {
             startActivity(i)
         }
 
-        binding.button2.setOnClickListener {
-            counter.c + 1
-            binding.counter.text = counter.toString()
+        binding.add.setOnClickListener {
+            counter.c += 1
+            binding.counter.text = counter.c.toString()
         }
     }
 
@@ -37,12 +36,9 @@ class SecondActivity : Activity() {
         outState.putInt("counter", counter.c)
     }
 
-    override fun onRestoreInstanceState(
-        savedInstanceState: Bundle?,
-        persistentState: PersistableBundle?
-    ) {
-        super.onRestoreInstanceState(savedInstanceState, persistentState)
-        counter = savedInstanceState.getInt("counter")
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        counter = Counter(savedInstanceState.getInt("counter"))
         binding.counter.text = counter.toString()
     }
 }
