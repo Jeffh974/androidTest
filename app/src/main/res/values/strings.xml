@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello">Hello to the second page</string>
+    <string name="todo">TODO</string>
+</resources>
